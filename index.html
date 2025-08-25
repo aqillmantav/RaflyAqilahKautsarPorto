@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTOFOLIO AQIL</title>
+  <link rel="stylesheet" href="b.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <h1>RAFLY AQILAH KAUTSAR</h1>
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#projects">Proyek</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="home fade-in">
+    <img src="poto.jpeg" alt="Foto Profil" class="profile-pic">
+    <h2> Rafly Aqilah Kautsar </h2>
+    <p></p>
+    
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="fade-in">
+    <div class="about">
+      <h2>Tentang Saya</h2>
+      <p>Halo! Saya Rafly Aqilah Kautsar, biasa dipanggil Aqil. 
+Saya lahir di Jakarta pada tahun 2007 dan saat ini saya adalah siswa kelas 12 di SMK Negeri 10 Jakarta dengan jurusan Rekayasa Perangkat Lunak (Software Engineering). 
+Saya memiliki pengalaman dalam membuat website sederhana untuk klien dan pernah membuat beberapa projek dari guru. 
+Bagi saya, coding bukan hanya keterampilan, melainkan juga cara untuk menciptakan solusi kreatif dan bermanfaat. 
+Saya dikenal sebagai pribadi yang giat, mudah beradaptasi, dan senang bekerja secara mandiri maupun dalam tim. 
+Saat ini, saya terus mengasah kemampuan di bidang web agar dapat menghasilkan karya yang lebih profesional dan bermanfaat bagi banyak orang.
+
+ </p>
+      <p><strong>Keahlian:</strong> HTML, CSS, Laravel</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="fade-in">
+    <h2>Projek Saya</h2>
+    <div class="projects">
+      <a href="Event.html">
+      <div class="project-card">
+        <img src="page.png" alt="Project 1">
+        <h3>Website Event Organizer</h3>
+      </div>
+      </a>
+      <a href="nexon.html">
+      <div class="project-card">
+        <img src="kelas.png" alt="Project 2">
+        <h3>Website Kelas XII RPL</h3>
+        <!-- <a href="nexon.html"><button>klik me</button></a> -->
+      </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Ingin berkolaborasi? Hubungi saya melalui:</p>
+  <div class="social-icons">
+    <a href="mailto:qilsarrr@email.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://wa.me/6289646626425" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://github.com/aqillmantav" target="_blank"><i class="fa-brands fa-github"></i></a>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© By Rafly Aqilah Kautsar</p>
+  </footer>
+
+  <!-- SCRIPT: ANIMASI SCROLL -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fade => appearOnScroll.observe(fade));
+  </script>
+</body>
+</html>

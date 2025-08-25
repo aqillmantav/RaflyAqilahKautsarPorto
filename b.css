@@ -1,0 +1,222 @@
+* {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(255,255,255,0.1) 100%), 
+                  url("3a2beb08-d674-40e6-9b4a-233a1682cbe7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: #00bfff;
+      transition: 0.3s;
+    }
+    a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 8px #ff00ff;
+    }
+    h1, h2, h3 {
+      margin: 0 0 15px;
+    }
+
+    /* === BACKGROUND ANIMATED === */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(0,191,255,0.15) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(255,0,255,0.15) 0%, transparent 60%);
+      animation: moveBg 10s infinite alternate;
+      z-index: -1;
+    }
+    @keyframes moveBg {
+      from { transform: translate(0, 0); }
+      to { transform: translate(20px, -20px); }
+    }
+
+    /* === ANIMATION === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+      
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === NAVBAR === */
+    header {
+      background: rgba(15,15,15,0.7);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0,191,255,0.3);
+    }
+    header h1 {
+      color: #00bfff;
+      font-size: 1.4rem;
+      text-shadow: 0 0 8px #00bfff;
+    }
+    nav a {
+      margin-left: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: #ff00ff;
+      transition: 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* === SECTIONS === */
+    section {
+      padding: 100px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .home {
+      text-align: center;
+      padding: 140px 20px 100px;
+    }
+    .home h2 {
+      font-size: 2.5rem;
+      color: #00bfff;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00bfff; }
+      to { text-shadow: 0 0 25px #ff00ff; }
+    }
+    .profile-pic {
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00bfff;
+      box-shadow: 0 0 15px rgba(0,191,255,0.5);
+      margin-bottom: 20px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 8px;
+      border: 1px solid #00bfff;
+      transition: all 0.3s;
+    }
+    .buttons a:hover {
+      background: #00bfff;
+      color: #0d0d0d;
+      box-shadow: 0 0 15px #00bfff;
+    }
+
+    /* === ABOUT === */
+    .about {
+      background: rgba(26,26,26,0.85);
+      border-radius: 15px;
+      padding: 40px;
+      margin-top: 40px;
+      box-shadow: 0 0 25px rgba(0,191,255,0.3);
+      transition: transform 0.3s ease;
+      
+    }
+    .about:hover {
+      transform: scale(1.02);
+    }
+
+    /* === PROJECTS === */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* min lebar card lebih besar */
+  gap: 30px; /* jarak antar card */
+  margin-top: 30px;
+}
+
+.project-card {
+  background: rgba(26, 26, 26, 0.85);
+  border-radius: 15px;
+  padding: 25px; /* sebelumnya 50px, biar isi card lebih lega */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(87, 47, 246, 0.5);
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px; /* tambahin tinggi gambar */
+  object-fit: cover; /* biar tetap proporsional */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+    /* === CONTACT === */
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      font-size: 2.5rem; /* ukuran ikon lebih gede */
+      margin: 0 15px;   /* jarak antar ikon */
+      color: #fff;      /* warna ikon putih */
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2); /* animasi zoom pas dihover */
+      color: #00ffcc;        /* warna berubah saat hover */
+    }
+
+    footer {
+        background: rgba(0,0,0,0.6); /* kasih layer biar teks jelas */
+        text-align: center;         /* posisiin teks ke tengah */
+        padding: 20px 0;            /* jarak biar nggak terlalu mepet */
+        margin-top: 40px;           /* jarak atas biar ada space */
+        font-size: 0.9rem;
+        color: #f0f0f0;
+        border-top: 1px solid rgba(255,255,255,0.2); /* garis tipis elegan */
+    }
